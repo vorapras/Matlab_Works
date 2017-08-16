@@ -1,0 +1,11 @@
+function y=npv(d,r,g,T,Ts);
+y=0;
+cf=zeros(T,1); cf(1)=d;
+for t=1:T; 
+  if t<=Ts;
+    cf(t+1)=cf(t)*(1+g);
+  else;
+    cf(t+1)=cf(t);
+  end;
+  y=y+cf(t)/((1+r)^t);
+end;

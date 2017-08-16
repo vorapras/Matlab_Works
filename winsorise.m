@@ -1,0 +1,13 @@
+function W=winsorise(x,lowcut,highcut);
+[T L]=size(x);
+z=x;
+y=sort(x);
+for i=1:T;
+   if z(i)<y(round(lowcut*T));
+       z(i)=y(round(lowcut*T));
+   end;
+   if z(i)>y(round(highcut*T));
+       z(i)=y(round(highcut*T));
+   end;
+end;
+W=[z y];
